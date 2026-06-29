@@ -1,6 +1,6 @@
 ---
 title: "南京大学智软软件质量管理2026期末大题回忆"
-date: 2026-06-30 22:00:00 +0800
+date: 2026-06-30 00:00:00 +0800
 category: "考试回忆"
 excerpt: "南京大学智能软件工程软件质量管理 2026 期末大题回忆，覆盖 DoD、WIP、TDD、CI/CD、团队激励、质量管理、Yield、PQI、Quality Journey 与 LLM 等主题。"
 description: "南京大学智软软件质量管理2026期末大题回忆。"
