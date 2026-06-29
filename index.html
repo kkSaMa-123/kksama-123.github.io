@@ -1,1 +1,39 @@
-<h1>Hello World</h1>
+---
+layout: default
+---
+
+<main>
+  <section class="home-shell" aria-label="个人主页">
+    <aside class="profile-panel" aria-label="个人信息">
+      <img
+        class="avatar"
+        src="https://github.com/kkSaMa-123.png"
+        alt="kkSaMa-123 的 GitHub 头像"
+      />
+      <p class="eyebrow">Personal Blog</p>
+      <h1>kkSaMa-123</h1>
+      <p class="profile-bio">把文章、观察和想法认真放在这里。</p>
+      <div class="profile-links" aria-label="联系方式">
+        <a href="https://github.com/kkSaMa-123">GitHub</a>
+        <a href="mailto:xinkaiji@outlook.com">xinkaiji@outlook.com</a>
+      </div>
+    </aside>
+
+    <section class="article-list" id="articles" aria-label="文章列表">
+      <div class="list-heading">
+        <p class="eyebrow">Articles</p>
+        <h2>文章</h2>
+      </div>
+      <div class="post-list">
+        {% for post in site.posts %}
+          <article class="post-row">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%Y-%m-%d" }}
+            </time>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+</main>

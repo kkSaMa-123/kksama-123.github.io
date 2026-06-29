@@ -1,0 +1,22 @@
+title: "kkSaMa-123 的博客"
+description: "记录文章、观察、技术笔记与长期思考。"
+url: "https://kksama-123.github.io"
+baseurl: ""
+lang: "zh-CN"
+timezone: "Asia/Shanghai"
+
+author:
+  name: "kkSaMa-123"
+  github: "https://github.com/kkSaMa-123"
+
+permalink: /posts/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md

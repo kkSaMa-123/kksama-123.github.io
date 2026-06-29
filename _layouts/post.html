@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<main class="article">
+  <article class="article-main">
+    <p class="article-meta">
+      {{ page.date | date: "%Y-%m-%d" }}
+      {% if page.category %} / {{ page.category }}{% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    <div class="article-body" id="articleBody">
+      {{ content }}
+    </div>
+  </article>
+
+  <aside class="article-toc" id="articleToc" aria-label="文章提纲">
+    <p class="toc-title">提纲</p>
+    <nav class="toc-list" id="tocList"></nav>
+  </aside>
+</main>
+
+<script>
+  (() => {
+    const body = document.querySelector("#articleBody");
+    const toc = document.querySelector("#articleToc");
+    const list = document.querySelector("#tocList");
+    const headings = [...body.querySelectorAll("h2, h3")];
+
+    if (!headings.length) {
+      toc.hidden = true;
+      return;
+    }
+
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        heading.id = `section-${index + 1}`;
+      }
+
+      const link = document.createElement("a");
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      link.className = `toc-link toc-${heading.tagName.toLowerCase()}`;
+      list.appendChild(link);
+    });
+  })();
+</script>
